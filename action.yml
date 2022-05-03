@@ -1,9 +1,13 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
+  sample-env-var:  # id of input
+    description: 'A sample env var'
+    required: false
+    default: 'Value'
   who-to-greet:  # id of input
     description: 'Who to greet'
-    required: true
+    required: false
     default: 'World'
 outputs:
   time: # id of output
