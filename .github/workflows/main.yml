@@ -7,9 +7,9 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: akv-demo/custom-action@v1.5
+        uses: akv-demo/custom-action@v1.6
         with:
-          who-to-greet: 'Mona the Octocat'
+          who-to-greet: 'Mona the Octocat 1.6'
           sample-env-var: 'AAAA'
       # Use the output from the `hello` step
       - name: Get the output time
