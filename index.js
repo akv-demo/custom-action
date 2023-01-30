@@ -15,6 +15,11 @@ try {
   const sampleVar = core.getInput('sample-env-var');
   console.log(`SampleVar ${sampleVar}!`);
   core.exportVariable('sampleVar', sampleVar);
+
+  const boolInput = core.getInput('bool-var');
+  console.log(`BoolInput "${boolInput}" of ${typeof boolInput}`);
+  core.exportVariable('boolVar', boolInput);
+
 } catch (error) {
   core.setFailed(error.message);
 }
