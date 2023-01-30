@@ -1,16 +1,51 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  no_bool_input:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
       - name: Hello world action step
         id: hello
-        uses: akv-demo/custom-action@v1.5
+        uses: akv-demo/custom-action@v1.9
         with:
           who-to-greet: 'Mona the Octocat'
           sample-env-var: 'AAAA'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
+
+      - name: Show env vars
+        run: set
+  false_bool_input:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - name: Hello world action step
+        id: hello
+        uses: akv-demo/custom-action@v1.9
+        with:
+          who-to-greet: 'Mona the Octocat'
+          sample-env-var: 'AAAA'
+          bool-var: false
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
+
+      - name: Show env vars
+        run: set
+
+  true_bool_input:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - name: Hello world action step
+        id: hello
+        uses: akv-demo/custom-action@v1.9
+        with:
+          who-to-greet: 'Mona the Octocat'
+          sample-env-var: 'AAAA'
+          bool-var: true
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
