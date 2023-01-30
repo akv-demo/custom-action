@@ -3,11 +3,11 @@ on: [push]
 jobs:
   no_bool_input:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: No bool input
     steps:
       - name: Hello world action step
         id: hello
-        uses: akv-demo/custom-action@v1.9
+        uses: akv-demo/custom-action@v1.10
         with:
           who-to-greet: 'Mona the Octocat'
           sample-env-var: 'AAAA'
@@ -19,11 +19,11 @@ jobs:
         run: set
   false_bool_input:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: false bool input
     steps:
       - name: Hello world action step
         id: hello
-        uses: akv-demo/custom-action@v1.9
+        uses: akv-demo/custom-action@v1.10
         with:
           who-to-greet: 'Mona the Octocat'
           sample-env-var: 'AAAA'
@@ -37,11 +37,11 @@ jobs:
 
   true_bool_input:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: true bool input
     steps:
       - name: Hello world action step
         id: hello
-        uses: akv-demo/custom-action@v1.9
+        uses: akv-demo/custom-action@v1.10
         with:
           who-to-greet: 'Mona the Octocat'
           sample-env-var: 'AAAA'
