@@ -9,6 +9,9 @@ inputs:
     description: 'Who to greet'
     required: false
     default: 'World'
+  bool-var:
+    description: investigate omitted value
+    required: false
 outputs:
   time: # id of output
     description: 'The time we greeted you'
