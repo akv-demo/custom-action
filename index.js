@@ -1,5 +1,5 @@
 const core = require('@actions/core');
 
 core.info('before')
-core.setFailed(error.message);
+core.setFailed("ERROR");
 core.info('after')

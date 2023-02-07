@@ -2820,7 +2820,7 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(829);
 
 core.info('before')
-core.setFailed(error.message);
+core.setFailed("ERROR");
 core.info('after')
 
 })();
