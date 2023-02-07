@@ -9790,14 +9790,6 @@ try {
   console.log(`SampleVar ${sampleVar}!`);
   core.exportVariable('sampleVar', sampleVar);
 
-  const boolInput = core.getInput('bool-var');
-  console.log(`BoolInput "${boolInput}" of ${typeof boolInput}`);
-  core.exportVariable('boolInput', boolInput);
-
-  const boolInputB = core.getBooleanInput('bool-var');
-  console.log(`BoolInput B "${boolInputB}" of ${typeof boolInputB}`);
-  core.exportVariable('boolInputB', boolInputB);
-
 } catch (error) {
   core.setFailed(error.message);
 }
