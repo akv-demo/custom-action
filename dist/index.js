@@ -9786,8 +9786,6 @@ try {
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
 
-  core.setFailed('Should see "The event payload" but not "SampleVar"')
-
   const sampleVar = core.getInput('sample-env-var');
   console.log(`SampleVar ${sampleVar}!`);
   core.exportVariable('sampleVar', sampleVar);
