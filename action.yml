@@ -1,17 +1,10 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  sample-env-var:  # id of input
-    description: 'A sample env var'
+  def-input:  # id of input
+    description: 'default value set to github.token'
     required: false
-    default: 'Value'
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: false
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+    default: ${{ github.token }}
 runs:
   using: 'node16'
   main: 'dist/index.js'
