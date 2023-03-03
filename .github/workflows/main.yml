@@ -1,8 +1,8 @@
 on: [push]
 
 permissions:
-  contents: read # only for delete-branch option
-  issues: write
+  contents: write # only for delete-branch option
+  issues: read
   pull-requests: read
 
 jobs:
