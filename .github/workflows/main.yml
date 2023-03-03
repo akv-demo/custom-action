@@ -1,5 +1,10 @@
 on: [push]
 
+permissions:
+  contents: read # only for delete-branch option
+  issues: write
+  pull-requests: read
+
 jobs:
   no_bool_input:
     runs-on: ubuntu-latest
