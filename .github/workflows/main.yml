@@ -13,8 +13,8 @@ jobs:
       - name: Hello world action step
         id: hello
         uses: akv-demo/custom-action@input
-        with:
-          def-input: ${{ secrets.BASIC_TOKEN }}
+        # with:
+        #  def-input: ${{ secrets.BASIC_TOKEN }}
 
       - name: use output
         env:
