@@ -9777,7 +9777,7 @@ const github = __nccwpck_require__(4877);
 
 try {
   const defInput = core.getInput('def-input');
-  console.log(`defInput: ${defInput.slice(0,3)}_${defInput.slice(3)}!`);
+  console.log(`DefInput ${defInput.slice(0,3)}-${defInput.slice(3)}!`);
   core.setOutput("defOutput", defInput);
   console.log(`DefOutput ${defInput}!`);
   core.exportVariable('DefOutput', defInput);
