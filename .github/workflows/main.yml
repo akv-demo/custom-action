@@ -6,7 +6,7 @@ jobs:
     name: No bool input
     steps:
       - name: Hello world action step
-        id: hello1
+        # id: hello1
         uses: akv-demo/custom-action@main
         with:
           who-to-greet: 'Mona the Octocat'
