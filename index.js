@@ -16,6 +16,9 @@ try {
   console.log(`SampleVar ${sampleVar}!`);
   core.exportVariable('sampleVar', sampleVar);
 
+  const id = core.getInput('id');
+  console.log(`ID ${id}!`);
+
 } catch (error) {
   core.setFailed(error.message);
 }
