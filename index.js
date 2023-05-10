@@ -3,7 +3,6 @@ const github = require('@actions/github');
 
 try {
   // `who-to-greet` input defined in action metadata file
-  console.log(process.env);
   const nameToGreet = core.getInput('who-to-greet');
   console.log(typeof nameToGreet);
   console.log(nameToGreet);
