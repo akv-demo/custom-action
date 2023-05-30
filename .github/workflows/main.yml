@@ -3,14 +3,38 @@ on: [push]
 jobs:
   no_bool_input:
     runs-on: ubuntu-latest
-    name: No bool input
+    name: Test glob
     steps:
-      - name: Hello world action step
-        id: hello1
-        uses: akv-demo/custom-action@main
+      - name: create sample dirs
+        run: |
+          mkdir -p /tmp/s/x
+          touch /tmp/s/x/1.t
+          touch /tmp/s/x/2.t
+          touch /tmp/s/x/3.k
+          touch /tmp/s/x/4.k
+      - name: test glob every string
+        uses: akv-demo/custom-action@glob
         with:
-          who-to-greet: |
-            'line 1'
-            'line 2'
-          sample-env-var: 'AAAA'
-      # Use the output from the `hello` step
+          pattern: |
+            /tmp/s/**/*.t
+            /tmp/s/**/*.k
+      - name: test glob explicit path
+        uses: akv-demo/custom-action@glob
+        with:
+          pattern: /tmp/s/x/1.t
+      - name: test glob explicit paths
+        uses: akv-demo/custom-action@glob
+        with:
+          pattern: |
+            /tmp/s/x/1.t
+            /tmp/s/x/2.t
+      - name: test glob combined paths
+        uses: akv-demo/custom-action@glob
+        with:
+          pattern: |
+            /tmp/s/x/1.t
+            /tmp/s/x/2.t
+            /tmp/s/**/*.t
+            /tmp/s/**/*.k
+      - name: test glob empty
+        uses: akv-demo/custom-action@glob

@@ -1,26 +1,17 @@
 const core = require('@actions/core');
-const github = require('@actions/github');
+const glob = require('@actions/glob');
 
-try {
-  // `who-to-greet` input defined in action metadata file
-  const nameToGreet = core.getInput('who-to-greet');
-  console.log(typeof nameToGreet);
-  console.log(nameToGreet);
-  console.log(JSON.parse(nameToGreet));
-  console.log(`Hello ${nameToGreet}!`);
-  const time = (new Date()).toTimeString();
-  core.setOutput("time", time);
-  // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2)
-  console.log(`The event payload: ${payload}`);
+const pattern = core.getInput('pattern');
+core.info(`pattern = "${pattern}"`)
 
-  const sampleVar = core.getInput('sample-env-var');
-  console.log(`SampleVar ${sampleVar}!`);
-  core.exportVariable('sampleVar', sampleVar);
-
-  const id = core.getInput('id');
-  console.log(`ID ${id}!`);
-
-} catch (error) {
-  core.setFailed(error.message);
-}
+glob.create(pattern)
+    .then(globber => globber.glob())
+    .then(expanded => {
+        if (expanded.length > 0) {
+            expanded.forEach((p, i) => {
+                core.info(`${i + 1}: "${p}"`);
+            })
+        } else {
+            core.info('No path expanded');
+        }
+    });
