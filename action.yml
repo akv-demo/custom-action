@@ -9,6 +9,13 @@ inputs:
     description: 'Who to greet'
     required: false
     default: 'World'
+  defnreq:
+    description: 'Def nreq value'
+    default: 'Val nreq'
+    required: false
+  defno:
+    description: 'Def no value'
+    default: 'Val no'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
