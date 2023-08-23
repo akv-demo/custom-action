@@ -2,6 +2,9 @@ on: [push]
 
 jobs:
   no_bool_input:
+    env:
+      GOOS: 123
+    
     runs-on: ubuntu-latest
     name: No bool input
     steps:
@@ -11,4 +14,4 @@ jobs:
 
       - name: use end
         run: |
-          echo "cache=${{ env.cache }}"
+          echo "cache=${{ env.cache }}-${{ env.GOOS }}"
