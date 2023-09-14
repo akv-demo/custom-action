@@ -4,6 +4,9 @@ inputs:
   pattern:  # id of input
     description: 'A glob patern'
     required: false
+  pattern2:  # id of input
+    description: 'A glob patern 2'
+    required: false
 outputs:
   paths: # id of output
     description: 'The time we greeted you'

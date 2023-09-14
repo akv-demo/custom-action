@@ -5287,7 +5287,13 @@ var __webpack_exports__ = {};
 const core = __nccwpck_require__(2186);
 const glob = __nccwpck_require__(8090);
 
-const pattern = core.getInput('pattern');
+const pattern1 = core.getInput('pattern');
+core.info(`pattern1 = "${pattern1}"`)
+
+const pattern2 = core.getInput('pattern2');
+core.info(`pattern2 = "${pattern2}"`)
+
+const pattern = pattern1 + '\n'+pattern2
 core.info(`pattern = "${pattern}"`)
 
 glob.create(pattern)

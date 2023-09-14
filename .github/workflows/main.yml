@@ -12,26 +12,33 @@ jobs:
           touch /tmp/s/x/2.t
           touch /tmp/s/x/3.k
           touch /tmp/s/x/4.k
+          touch /tmp/s/x/5.s
+          touch /tmp/s/x/6.s
       - name: test glob every string
         uses: akv-demo/custom-action@glob
         with:
           pattern: |
             /tmp/s/**/*.t
             /tmp/s/**/*.k
+          pattern2: |
+            /tmp/s/**/*.s
       - name: test glob explicit path
         uses: akv-demo/custom-action@glob
         with:
           pattern: /tmp/s/x/1.t
+          pattern2: /tmp/s/x/5.s
       - name: test glob explicit paths
         uses: akv-demo/custom-action@glob
         with:
           pattern: |
             /tmp/s/x/1.t
             /tmp/s/x/2.t
+          pattern2: /tmp/s/x/5.s
       - name: test glob combined paths
         uses: akv-demo/custom-action@glob
         with:
-          pattern: |
+          pattern: /tmp/s/x/5.s
+          pattern2: |
             /tmp/s/x/1.t
             /tmp/s/x/2.t
             /tmp/s/**/*.t
