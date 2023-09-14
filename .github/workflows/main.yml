@@ -38,3 +38,4 @@ jobs:
             /tmp/s/**/*.k
       - name: test glob empty
         uses: akv-demo/custom-action@glob
+        
