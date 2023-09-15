@@ -19,9 +19,11 @@ jobs:
         with:
           pattern: |
             /tmp/s/**/*.t
+            
             /tmp/s/**/*.k
           pattern2: |
             /tmp/s/**/*.s
+            
       - name: test glob explicit path
         uses: akv-demo/custom-action@glob
         with:
